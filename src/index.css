@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui" {
+   themes: light --default, dark ;
+ }
+
+
+
+
+ 
+ @theme{
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-roboto:  "Roboto Condensed", sans-serif;
+  --font-comic: "Comic Relief", system-ui;
+ }
+
+ body{
+  font-family: var(--font-poppins);
+ }
+
+
+ .animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
