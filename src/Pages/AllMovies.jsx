@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import MovieCard from '../Components/MovieCard';
-import { getMovies } from '../Services/getMovie';
 import { Home, Search } from 'lucide-react';
 
 const AllMovies = () => {
@@ -10,7 +9,7 @@ const AllMovies = () => {
 
     const [title, setTitle] = useState('');
     const [updatedMovies, setUpdatedMovies]=useState(movies)
-    // console.log(title);
+   
 
     
     
@@ -20,8 +19,6 @@ const AllMovies = () => {
 
         const getMovies = movies.filter(movie => movie.name.toLowerCase().includes(title.toLowerCase()))
         setUpdatedMovies(getMovies)
-        
-
     }
     
 

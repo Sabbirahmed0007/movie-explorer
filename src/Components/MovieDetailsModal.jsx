@@ -1,6 +1,6 @@
 import { CalendarDays, Star, X } from 'lucide-react';
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
@@ -30,7 +30,7 @@ const MovieDetailsModal = ({ onClose, movie }) => {
                 {/* type language */}
                 <div className='my-3 flex items-center justify-between'>
                     <p className='flex items-center justify-start '><span className='font-bold'>Type: </span>{type}</p>
-                    <p className='flex items-center justify-end'><span className='font-bold'>Language :</span> { language}</p>
+                    <p className='flex items-center justify-end'><span className='font-bold'>Language :</span> {language}</p>
                 </div>
                 {/* Genres */}
                 <div className='flex items-center justify-start gap-2 my-5'>
@@ -64,8 +64,9 @@ const MovieDetailsModal = ({ onClose, movie }) => {
                     <span className='font-bold text-xl text-gray-500 '>Overview:</span>
                     <Markdown rehypePlugins={rehypeRaw}>{ summary}</Markdown>
                 </div>
-                <div>
-
+                <div className='text-right space-x-2'>
+                      <Link to={url} className='btn btn-neutral'>Watch Movie</Link>
+                      <button className='btn btn-error' onClick={onClose}>close</button>
                 </div>
 
             </div>
