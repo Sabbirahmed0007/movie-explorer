@@ -6,10 +6,10 @@ import Footer from '../Shared/Footer';
 const MainLayout = () => {
     return (
         <div className='max-w-7xl mx-auto space-y-5'>
-            <header className='sticky top-0 z-50'>
+            <header className=''>
                 <Navbar></Navbar>
             </header>
-            <main className='px-5 box-border min-h-screen'>
+            <main className='px-5 box-border '>
                 <Outlet></Outlet>
             </main>
             <footer>

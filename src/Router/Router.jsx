@@ -31,19 +31,7 @@ const Router = createBrowserRouter([
                 }
                 
             },
-            {
-                path: '/movie/:id',
-                element: <MovieDetailsModal></MovieDetailsModal>,
-                loader: async ({params}) => {
-                    const url = `https://api.tvmaze.com/shows/${params.id}`;
-
-                    const res = await fetch(url);
-                    const data = await res.json();
-                    console.log(data);
-                    return data;
-
-                }
-            }
+            
         ]
         
    }

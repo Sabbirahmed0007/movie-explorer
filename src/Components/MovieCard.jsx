@@ -13,10 +13,10 @@ const MovieCard = ({ movie }) => {
     
     return (
         <div>
-            <div className="card bg-base-200 shadow-md overflow-hidden">
+            <div className="card bg-base-200 shadow-md ">
                 <figure className="h-80">
                     <img
-                        src={image.medium}
+                        src={image?.medium}
                         alt={name}
                         className="w-full h-full object-cover"
                     />
@@ -34,7 +34,7 @@ const MovieCard = ({ movie }) => {
                                 size={17}
                                 className="fill-yellow-400 text-yellow-400"
                             />
-                            {rating.average}
+                            {rating?.average}
                         </span>
 
                         <span className="flex items-center gap-1 opacity-70">
@@ -46,18 +46,21 @@ const MovieCard = ({ movie }) => {
 
                     {/* See Details */}
                     <div className="card-actions mt-3">
-                        <Link
-                            onClick={()=>setShowModal(!showModal)}
-                            to={`/movie/${id}`}
+                        <button
+                            role='button'
+                            tabIndex={0}
+                            onClick={()=>setShowModal(true)}
+                            
                             className="btn btn-primary btn-sm w-full"
                         >
                             See Details
-                        </Link>
+                        </button>
                     </div>
                     {/* Showing modal */}
-                    <div>
+                    <div className='' tabIndex={-1}>
                         {
-                            showModal && <MovieDetailsModal ></MovieDetailsModal>
+                            showModal && <MovieDetailsModal onClose={() => setShowModal(false)}
+                                movie={ movie}></MovieDetailsModal>
                         }
                     </div>
 
